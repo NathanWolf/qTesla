@@ -16,48 +16,10 @@
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <?php
-require_once '../keys.php';
+include('../header.inc.php');
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>qTesla Radar</title>
-		<link rel="icon" 
-		      type="image/png" 
-		      href="../favicon.png">
+
         <style type="text/css">
-            a:link {color:#FFFFFF;text-decoration:none;} /* unvisited link */
-            a:visited {color:#FFFFFF;text-decoration:none;}  /* visited link */
-            a:hover {color:#7F7F7F;text-decoration:none;}  /* mouse over link */
-            a:active {color:#7F7F7F;text-decoration:none;}  /* selected link */
-            a.green:link {color:#5FFF5F;text-decoration:none;} /* unvisited link */
-            a.green:visited {color:#5FFF5F;text-decoration:none;}  /* visited link */
-            a.green:hover {color:#7FFF7F;text-decoration:none;}  /* mouse over link */
-            a.green:active {color:#7FFF7F;text-decoration:none;}  /* selected link */
-            a.red:link {color:#FF3F3F;text-decoration:none;} /* unvisited link */
-            a.red:visited {color:#FF3F3F;text-decoration:none;}  /* visited link */
-            a.red:hover {color:#FF5F5F;text-decoration:none;}  /* mouse over link */
-            a.red:active {color:#FF5F5F;text-decoration:none;}  /* selected link */
-            a img {border: none;}   
-            input:focus, textarea:focus, *:focus {outline: none;}
-            body
-            {              
-                color:#FFFFFF;
-                background-color:#000000;
-                font-family: 'Gotham Book', Gotham-Book, Arial, sans-serif;
-            }
-            home
-            {
-                position:fixed;
-                top:20px;
-                left:20px;
-            }
-            donate
-            {
-                position:fixed;
-                top:20px;
-                right:20px;
-            }
             div#radar {
                 position: fixed;
                 width: 100%;
@@ -67,16 +29,7 @@ require_once '../keys.php';
                 background-repeat:no-repeat;
                 background-position:center;  
                 background-size:cover;
-            }
-            div#spinner {
-                position: fixed;
-                width: 100%;
-                height: 100%;
-                color:#FFFFFF;
-                background-repeat:no-repeat;
-                background-attachment:fixed;
-                background-position:center;    
-                background-image:url('../spinner.gif');  
+                display:none;
             }
         </style>
 
@@ -84,7 +37,6 @@ require_once '../keys.php';
         <script type="text/javascript">
             // Success Callback
             function onGeoSuccess(location) {
-                console.log(location);      
                 var strApi = 'http://api.wunderground.com/api/<?=$_key_weatherUnderground?>/animatedradar/image.gif?' + 
                     '&centerlat=' + location.coords.latitude +
                     '&centerlon=' + location.coords.longitude + 
@@ -92,7 +44,8 @@ require_once '../keys.php';
                 var radarImage = new Image();           
                 radarImage.onload = function() {
                     document.getElementById('radar').style.backgroundImage = 'url(' + radarImage.src + ')';
-                    document.getElementById('spinner').style.backgroundImage="none";
+                    document.getElementById('radar').style.display="block";
+                    document.body.style.backgroundImage="none";
                 };
                 radarImage.src = strApi;
             }
@@ -100,7 +53,7 @@ require_once '../keys.php';
             function onGeoError(message) {
                 console.log(message);
                 document.getElementById('radar').style.backgroundImage="none";
-                document.getElementById('spinner').style.backgroundImage="url('../teslalogo.png')";
+                document.body.style.backgroundImage=="url('../teslalogo.png')";
             }
             // Load Event Handler
             window.onload = function () {
@@ -108,20 +61,15 @@ require_once '../keys.php';
                 geolocator.locate(onGeoSuccess, onGeoError, 0, html5Options, null);
             }
         </script>
-    </head>
-
-    <body style="margin:0px;padding:0px;overflow:hidden">
-        <home><span style="font-size: 28px"><a href="../">qTesla</a></span></home>
-        <donate><span style="font-size: 24px"><a href="../help">Help</a></span></donate>
-        <center>
-            <br>
-            <br>
-            <span style="font-size: 38px"><a href="../forecast">Forecast</a> &middot; <a href="../radar" class="red">Radar</a> &middot; <a href="../plugshare">PlugShare</a> &middot; <a href="../waze">Waze</a> &middot; <a href="../stock">Stock</a></span>
-        </center>
-        <br>     
+        
+<?php
+include('../header2.inc.php');
+?>
+        
         <center>
             <div id="radar"/>
-            <div id="spinner"/>
-        </center>  
-    </body>
-</html>
+        </center> 
+        
+<?php
+include('../footer.inc.php');
+?>
