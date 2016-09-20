@@ -87,7 +87,7 @@
                 var strQuery = 'http://api.timezonedb.com/?lat=' +  
                             location.coords.latitude + '&lng=' + 
                             location.coords.longitude + '&time=' + 
-                            Math.floor(location.timestamp/1000) + '&format=json&key=4BQJCLKUX7YH';
+                            Math.floor(location.timestamp/1000) + '&format=json&key=<?=$_key_timezone?>';
                 console.log(strQuery);
                 jQuery(document).ready(function($) {
                     $.ajax({
