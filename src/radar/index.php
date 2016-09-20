@@ -15,6 +15,9 @@
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 -->
+<?php
+require_once '../keys.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -82,7 +85,7 @@
             // Success Callback
             function onGeoSuccess(location) {
                 console.log(location);      
-                var strApi = 'http://api.wunderground.com/api/782096d3ad25cd76/animatedradar/image.gif?' + 
+                var strApi = 'http://api.wunderground.com/api/<?=$_key_weatherUnderground?>/animatedradar/image.gif?' + 
                     '&centerlat=' + location.coords.latitude +
                     '&centerlon=' + location.coords.longitude + 
                     '&width=800&height=1000&radius=100&newmaps=1&num=12&delay=25&noclutter=1';
