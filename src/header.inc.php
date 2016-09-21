@@ -112,12 +112,6 @@ require_once('keys.inc.php');
             left: 20px;
         }
 
-        donate {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-        }
-
         clock {
             position: fixed;
             bottom: 20px;
