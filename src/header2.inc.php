@@ -7,8 +7,8 @@
             <br>
             <br>
             <span style="font-size: 38px">
+                <a href="/radar">Radar</a> &middot;
                 <a href="/forecast">Forecast</a> &middot; 
-                <a href="/radar">Radar</a> &middot; 
                 <a href="/plugshare">PlugShare</a> &middot; 
                 <a href="/waze">Waze</a>
             </span>
