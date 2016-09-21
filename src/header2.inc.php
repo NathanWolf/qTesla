@@ -2,14 +2,12 @@
     </head>
 
     <body style="margin:0px;padding:0px;overflow:hidden">
-        <home><span style="font-size: 28px"><a href="/" class="red">qTesla</a></span></home>
-        <center>
-            <br>
-            <br>
+        <div id="clocklink"><a href="/clock" target="main"><img src="/clockbtn.png" /></a></div>
+        <div id="toolbar">
             <span style="font-size: 38px">
                 <a href="/radar">Radar</a> &middot;
                 <a href="/forecast">Forecast</a> &middot; 
                 <a href="/plugshare">PlugShare</a> &middot; 
                 <a href="/waze">Waze</a>
             </span>
-        </center>   
+        </div>   

@@ -106,15 +106,14 @@ require_once('keys.inc.php');
             font-family: 'Gotham Book', Gotham-Book, Arial, sans-serif;
         }
 
-        home {
+        #clocklink {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 8px;
+            left: 8px;
         }
-
-        clock {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+        
+        #toolbar {
+            text-align: center;
+            margin-top: 1em;
         }
     </style>

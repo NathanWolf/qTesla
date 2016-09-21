@@ -28,7 +28,6 @@ include('header.inc.php');
 <?php
 include('header2.inc.php');
 ?>
-<clock><a href="./clock" target="main"><img src="clockbtn.png" /></a></clock>
 
 <?php
 include('footer.inc.php');
