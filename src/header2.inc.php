@@ -2,7 +2,7 @@
     </head>
 
     <body style="margin:0px;padding:0px;overflow:hidden">
-        <div id="clocklink"><a href="/clock" target="main"><img src="/clockbtn.png" /></a></div>
+        <div id="clocklink"><a href="/clock"><img src="/clockbtn.png" /></a></div>
         <div id="toolbar">
             <span style="font-size: 38px">
                 <a href="/radar">Radar</a> &middot;
