@@ -20,7 +20,6 @@ include('../header.inc.php');
 ?>
 
         <script src="../jquery-2.1.0.min.js"></script>
-        <script type="text/javascript" src="../geolocator.min.js"></script>
         <script type="text/javascript">
             // Success Callback
             function onGeoSuccess(location) {
@@ -80,8 +79,8 @@ include('../header.inc.php');
             }
             // Load Event Handler
             window.onload = function () {
-                var html5Options = { enableHighAccuracy: true, timeout: 3000, maximumAge: 0 };
-                geolocator.locate(onGeoSuccess, onGeoError, 0, html5Options, null);
+                var html5Options = { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 };
+                navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, html5Options);
             }
         </script>
 
